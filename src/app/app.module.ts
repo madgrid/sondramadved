@@ -8,6 +8,7 @@ import { ArtItem1Component } from './art-item1/art-item1.component';
 import { ArtItem2Component } from './art-item2/art-item2.component';
 import { ArtItem3Component } from './art-item3/art-item3.component';
 import { ArtMoreComponent } from './art-more/art-more.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ArtMoreComponent } from './art-more/art-more.component';
     ArtItem1Component,
     ArtItem2Component,
     ArtItem3Component,
-    ArtMoreComponent
+    ArtMoreComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
