@@ -1,0 +1,339 @@
+easeout(s=.45s)
+  transition all s cubic-bezier(0.23, 1, 0.32, 1)
+align()
+  display flex
+  align-items center
+  justify-content center
+color1 = #F1DCC2;
+color2 = #F9F3E4;
+color3 = #C1D7CE;
+color4 = #F1E2D3;
+color5 = #F8CCCF;
+color6 = #bdc3c7;
+  
+*
+  box-sizing border-box
+  -webkit-tap-highlight-color:  rgba(white, 0); // remove tap highlight on android chrome
+
+body
+  line-height 1.5
+  font-family 'Montserrat'
+  -webkit-font-smoothing antialiased
+  text-rendering optimizeLegibility
+  color lighten(black, 10)
+  background lighten(black, 10)
+  
+a
+  text-decoration none
+  color inherit
+  
+ ul
+   list-style-type none
+   margin 0
+   padding 0
+   
+ .nav
+   will-change: transform
+   position fixed
+   top 0
+   left 0
+   width 100%
+   z-index 1
+   background lighten(black, 10)
+   transform translateY(-100%)
+   easeout()
+   
+   &--active
+     transform translateY(0)
+   
+   &__list
+     display flex
+   
+   &__item
+     flex 1
+     position relative
+     easeout()
+     
+     &:hover
+       opacity 0.75
+        
+   &__thumb
+     display block
+     height 120px
+     background crimson
+     easeout()
+              
+     &:before
+       content attr(data-letter)
+       position absolute
+       top 50%
+       left 50%
+       transform translate(-50%, -50%)
+       font-size 70px
+       text-transform uppercase
+       opacity 0.15
+     
+   &__label
+     position absolute
+     top 50%
+     left 50%
+     transform translate(-50%, -50%)
+     text-transform uppercase
+     letter-spacing 2px
+     color lighten(black, 10)
+     margin 0
+     
+   @media (max-width 850px)
+     &__label
+       font-size 14px
+       
+   @media (max-width 720px)
+     &__label
+       display none
+
+     &__thumb
+       height 90px
+       &:before
+         font-size 32px
+         opacity 0.7
+     
+.burger
+  position absolute
+  right 0
+  top 100%
+  width 60px
+  height 60px
+  background lighten(black, 10)
+  cursor pointer
+  align()
+  
+  &__patty
+    position relative
+    width 60%
+    height 2px
+    background white
+    easeout()
+    
+    &:before,
+    &:after
+      will-change transform
+      content ""
+      position absolute
+      left 0
+      background white
+      height 2px
+      width 100%
+      easeout()
+    
+    &:before
+      top -10px
+    &:after
+      top 10px
+      
+  &--close
+    .burger__patty
+      transform rotate(45deg)
+      &:before
+        transform rotate(-90deg) translate(-9px, 0)
+      &:after
+        opacity 0
+        transform scaleX(0)
+
+.section
+  will-change transform
+  position absolute
+  width 100%
+  top 0
+  left 0
+  height 100vh
+  overflow hidden
+  align()
+  text-align center
+  background white
+  transform translateX(100%)
+  easeout(.7s)
+  
+  &--hidden
+    transform translateX(-100%);
+  
+  &--active
+    transform translateX(0) rotateY(0)
+    z-index 2
+    
+  &:before
+    content attr(data-letter)
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+    font-size 75vh
+    text-transform uppercase
+    opacity 0.15
+    z-index -1
+    
+  &__wrapper
+    width 100%
+    padding 0 8vw
+    
+  &__title
+    margin 15px 0 5px 0
+    font-size 24px
+    text-transform uppercase
+    letter-spacing 4px
+    
+  p
+    margin 0 0 25px 0
+    font-family 'Georgia'
+    font-size 20px
+    
+    &:last-child
+      margin-bottom 0
+
+*
+    box-sizing border-box
+    transition all 0.25s ease-in-out
+
+.color1
+  background color1
+.color2
+  background color2
+.color3
+  background color3
+.color4
+  background color4
+.color5
+  background color5
+.color6
+  background color6
+  
+  @media (max-width 720px)
+     top 160px
+
+  img
+    width: 45px
+    transform: rotate(0)
+    easeout()
+  
+    &:hover
+      transform: rotate(180deg) scale(1.1)
+
+	
+	li
+    position absolute
+    list-style none
+    display block
+    width 100px
+    height 100px
+    color white
+    font-size 2em
+    bottom -160px
+    animation square 25s infinite
+    background-image url("../../assets/img/more1.png")
+    transition-timing-function linear
+    border 5px solid white
+  	-webkit-animation square 25s infinite
+  	animation         square 25s infinite		
+  	-webkit-transition-timing-function: linear
+  	transition-timing-function: linear
+		
+	  &:nth-child(1)
+      left 0%
+      width 580px
+      height 580px
+      background-image url("../../assets/img/more1.png")
+      background-size contain
+		
+		
+	  &:nth-child(2)
+      left 20%			
+      width 580px
+      height 580px
+      animation-delay 2s
+      animation-duration 17s
+      background-image url("../../assets/img/more2.png")
+      background-size contain
+		
+		&:nth-child(3)
+      left 25%
+      animation-delay 4s
+      background url("../../assets/img/more3.png")
+      background-size contain
+  
+		
+		&:nth-child(4)
+      left 40%
+      width 160px
+      height 160px
+      animation-duration 22s
+      background-color fade(white, 25%)
+      background-image url("../../assets/img/more4.png")
+      background-size contain
+		
+		
+		&:nth-child(5)
+      left 70%
+      background-image url("../../assets/img/more5.png")
+      background-size contain
+		
+		&:nth-child(6)
+      left 80%
+      width 120px
+      height 120px
+      animation-delay 3s
+      background-color fade(white, 20%)
+      background-image url("../../assets/img/more6.png")
+      background-size contain
+		
+		&:nth-child(7)
+      left 32%
+      width 160px
+      height 160px
+      animation-delay 7s
+      background-image url("../../assets/img/more7.png")
+      background-size contain
+		
+		
+		&:nth-child(8)
+      left 55%
+      width 150px
+      height 150px
+      animation-delay 15s
+      animation-duration 40s
+      background-image url("../../assets/img/more8.png")
+      background-size contain
+		
+		
+		&:nth-child(9)
+      left 25%
+      width 110px
+      height 110px
+      animation-delay 2s
+      animation-duration 40s
+      background-image url("../../assets/img/more9.png")
+      background-size contain
+		
+		&:nth-child(10)
+      left 90%
+      width 160px
+      height 160px
+      animation-delay 11s
+      background-image url("../../assets/img/more10.png")
+      background-size contain
+		
+	
+
+$-webkit-keyframes square
+  0%
+    transform: translateY(0)
+  100%
+    transform: translateY(-1200px) rotate(600deg)
+
+@keyframes square
+  0%
+    transform: translateY(0)
+  100%
+    transform: translateY(-1200px) rotate(600deg)
+
+
+
+
