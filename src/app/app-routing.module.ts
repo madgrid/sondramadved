@@ -9,7 +9,7 @@ import { ArtMoreComponent } from './art-more/art-more.component';
 import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
-  { path: 'about', component: AboutComponent },
+  { path: '', component: AboutComponent },
   { path: 'art-item1', component: ArtItem1Component },
   { path: 'art-item2', component: ArtItem2Component },
   { path: 'art-item3', component: ArtItem3Component },
