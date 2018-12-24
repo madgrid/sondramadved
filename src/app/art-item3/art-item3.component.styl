@@ -4,11 +4,11 @@ align()
   display flex
   align-items center
   justify-content center
-color1 = #1abc9c;
-color2 = #e74c3c;
-color3 = #3498db;
-color4 = #F4D03F;
-color5 = #9b59b6;
+color1 = #F1DCC2;
+color2 = #F9F3E4;
+color3 = #C1D7CE;
+color4 = #F1E2D3;
+color5 = #F8CCCF;
 color6 = #bdc3c7;
   
 *
@@ -173,7 +173,6 @@ a
     
   &__wrapper
     width 100%
-    max-width 800px
     padding 0 8vw
     
   &__title
@@ -189,6 +188,50 @@ a
     
     &:last-child
       margin-bottom 0
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,700);
+.lines
+    width 175px
+    height 525px
+    margin 25px
+    display inline-block
+    border-radius 25px
+    box-shadow inset 0 0 0 0 rgba(255, 255, 255, 0), inset 0 0 0 225px rgba(0, 0, 0, 0), 0 5px 15px #000
+    text-align center
+    letter-spacing 0.5em
+    padding-left 0.5em
+    line-height 225px
+    text-decoration none
+    font-family Raleway, sans-serif
+    font-weight 700
+    font-size 2.5rem
+    text-transform uppercase
+    color transparent
+    text-shadow none
+
+.lines
+    &:hover
+        box-shadow inset 0 0 0 20px rgba(255, 255, 255, 0.25), inset 0 0 0 225px rgba(0, 0, 0, 0.5), 0 5px 15px #000
+        text-shadow 0.075em 0.075em 1px rgba(0, 0, 0, 0.5)
+        color #fff
+        letter-spacing 0.15em
+        padding-left 0.15em
+    &:active
+        box-shadow inset 0 0 0 20px rgba(255, 255, 255, 0.25), inset 0 0 0 225px rgba(0, 0, 0, 0.5), 0 0 10px #000
+        transform translateY(5px)
+    &:nth-of-type(1)
+        background url("../../assets/img/lines.jpg") left center / cover
+    &:nth-of-type(2)
+        background url("../../assets/img/lines.jpg") center center / cover
+        @media (max-width 720px)
+          transform translateX(0px)
+    &:nth-of-type(3)
+        background url("../../assets/img/lines.jpg") right bottom / cover
+
+*
+    box-sizing border-box
+    transition all 0.25s ease-in-out
+
       
 .color1
   background color1
@@ -197,10 +240,7 @@ a
 .color3
   background color3
 .color4
-  background-image url("../../assets/img/lines.jpg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: cover;
+  background color4
 .color5
   background color5
 .color6
